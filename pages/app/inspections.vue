@@ -6,6 +6,7 @@ const { data: assets } = await useAsyncData('inspection-assets', () => api.reque
 const { data: runs, refresh } = await useAsyncData('inspection-runs', () => api.request<any[]>('/portal/inspections').catch(() => []))
 const form = reactive({ assetId: '', toolType: 'MFL + Caliper', vendor: 'LineSight Engine', fileName: '', rows: [] as any[] })
 const loading = ref(false); const error = ref(''); const drag = ref(false)
+const file = ref<File | null>(null); const fileInput = ref<HTMLInputElement | null>(null)
 watch(assets, (value) => { if (value?.length && !form.assetId) form.assetId = value[0]._id }, { immediate: true })
 function parseCsv(text: string) {
   const lines = text.trim().split(/\r?\n/); const head = lines.shift()?.split(',').map(s => s.trim()) || []
@@ -14,16 +15,26 @@ function parseCsv(text: string) {
   if (distance < 0 || depth < 0) throw new Error('CSV needs distance_m and depth_pct columns')
   return lines.filter(Boolean).map(line => { const cells = line.split(','); return { distanceM: Number(cells[distance]), depthPct: Number(cells[depth]), lengthMm: length >= 0 ? Number(cells[length]) : 40, widthMm: width >= 0 ? Number(cells[width]) : 20, type: type >= 0 ? cells[type] : 'Metal loss' } })
 }
-async function readFile(file?: File) {
-  if (!file) return
-  form.fileName = file.name
-  try { form.rows = parseCsv(await file.text()); error.value = '' } catch (e: any) { error.value = e.message }
+async function readFile(selected?: File) {
+  if (!selected) return
+  form.fileName = selected.name
+  file.value = selected
+  try { form.rows = parseCsv(await selected.text()); error.value = '' } catch (e: any) { error.value = e.message }
 }
 function onDrop(e: DragEvent) { drag.value = false; readFile(e.dataTransfer?.files?.[0]) }
 async function run() {
   if (!form.assetId) return
   loading.value = true; error.value = ''
-  try { const report = await api.request<any>('/portal/inspections', { method: 'POST', body: form }); await refresh(); router.push(`/app/reports/${report._id}`) }
+  try {
+    let report: any
+    if (file.value) {
+      const fd = new FormData(); fd.append('file', file.value); fd.append('assetId', form.assetId); fd.append('toolType', form.toolType)
+      report = await api.request<any>('/portal/inspections/upload', { method: 'POST', body: fd })
+    } else {
+      report = await api.request<any>('/portal/inspections', { method: 'POST', body: form })
+    }
+    await refresh(); router.push(`/app/reports/${report._id}`)
+  }
   catch (e: any) { error.value = e?.data?.message || 'Could not run the inspection' }
   finally { loading.value = false }
 }
@@ -36,7 +47,7 @@ async function run() {
         <div class="rounded-xl border border-ink/12 bg-bone p-5">
           <div class="flex items-center justify-between"><p class="font-display text-[22px]">New run</p><span class="flex items-center gap-1.5 font-mono text-[8px] uppercase tracking-[.08em] text-mint-deep"><span class="status-dot" /> Engine online</span></div>
           <div class="mt-5 space-y-4"><div><label class="field-label">Asset</label><select v-model="form.assetId" class="field"><option v-for="a in assets" :key="a._id" :value="a._id">{{ a.name }} · {{ a.diameterMm }} mm</option></select></div><div><label class="field-label">Tool / data type</label><select v-model="form.toolType" class="field"><option>MFL + Caliper</option><option>Caliper only</option><option>CCTV + Acoustic</option><option>IMU / mapping</option></select></div></div>
-          <div class="mt-5 flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-ink/20 px-4 py-8 text-center transition-colors" :class="drag ? 'border-signal bg-signal/5' : 'hover:border-ink/40'" @click="($refs.file as HTMLInputElement)?.click()" @dragover.prevent="drag = true" @dragleave.prevent="drag = false" @drop.prevent="onDrop"><FileUp :size="24" class="text-ink/35" /><p class="mt-3 text-[13px] font-medium">{{ form.fileName || 'Drop a CSV or choose a file' }}</p><p class="mt-1 text-[10.5px] text-ink/40">distance_m, depth_pct, length_mm, width_mm · demo accepts any CSV</p><input ref="file" type="file" accept=".csv,text/csv" class="hidden" @change="readFile(($event.target as HTMLInputElement).files?.[0])"></div>
+          <div class="mt-5 flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-ink/20 px-4 py-8 text-center transition-colors" :class="drag ? 'border-signal bg-signal/5' : 'hover:border-ink/40'" @click="fileInput?.click()" @dragover.prevent="drag = true" @dragleave.prevent="drag = false" @drop.prevent="onDrop"><FileUp :size="24" class="text-ink/35" /><p class="mt-3 text-[13px] font-medium">{{ form.fileName || 'Drop a CSV or choose a file' }}</p><p class="mt-1 text-[10.5px] text-ink/40">distance_m, depth_pct, length_mm, width_mm · demo accepts any CSV</p><input ref="fileInput" type="file" accept=".csv,text/csv" class="hidden" @change="readFile(($event.target as HTMLInputElement).files?.[0])"></div>
           <p class="mt-3 text-[10.5px] leading-relaxed text-ink/40">No file? Use the demo run — the engine will generate a realistic 18-anomaly dataset for this asset.</p>
           <button class="btn btn-dark mt-4 w-full" :disabled="loading" @click="run"><LoaderCircle v-if="loading" :size="15" class="animate-spin" /> {{ loading ? 'Screening anomalies…' : 'Run diagnostic' }} <Sparkles v-if="!loading" :size="14" /></button>
           <p v-if="error" class="mt-3 text-[11px] text-signal-deep">{{ error }}</p>

@@ -15,6 +15,7 @@ All customer accounts use `LineSightDemo!2026`:
 - `utility@linesight.io` — utility engineer
 - `homeowner@linesight.io` — homeowner
 - `contractor@linesight.io` — contractor
+- `supplier@linesight.io` — manufacturer
 
 Studio demo is separate at http://localhost:3210 (`ops@linesight.io` /
 `LineSightOps!2026`).
@@ -22,10 +23,11 @@ Studio demo is separate at http://localhost:3210 (`ops@linesight.io` /
 ## Routes
 Marketing: `/`, `/intelligence`, `/homeowners`, `/marketplace`,
 `/marketplace/:slug`, `/configurator`, `/rentals`, `/pricing`, `/contact`,
-`/contractors`, `/security`, `/insights`.
+`/contractors`, `/security`, `/insights`, `/signup`, `/forgot`, `/reset`.
 
 Portal (`/app`, client-rendered): overview, assets, inspections, reports,
-marketplace, orders, rentals, home jobs, contractor, billing.
+marketplace, orders, rentals, home jobs, contractor work orders, manufacturer
+catalog, billing/invoices and notifications.
 
 ## Environment
 | Variable | Default | Purpose |

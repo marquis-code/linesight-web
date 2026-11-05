@@ -30,11 +30,19 @@ export function useApi() {
     persist(data.token, data.user)
     return data
   }
+  async function download(path: string, filename: string) {
+    init()
+    const res = await fetch(`${config.public.apiBase}${path}`, { headers: token.value ? { Authorization: `Bearer ${token.value}` } : {} })
+    if (!res.ok) throw new Error('Download failed')
+    const blob = await res.blob()
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a'); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url)
+  }
   async function me() {
     init(); if (!token.value) return null
     try { const data = await request<any>('/auth/me'); user.value = data.user; if (import.meta.client) localStorage.setItem('ls_user', JSON.stringify(data.user)); return data.user } catch { clear(); return null }
   }
-  return { request, login, me, init, clear, token, user }
+  return { request, download, login, me, init, clear, token, user }
 }
 
 export function money(value: number | string | undefined, currency = 'USD') {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Activity, ArrowUpRight, Boxes, ClipboardList, CreditCard, FileText, Gauge, Home, LayoutDashboard, LogOut, Menu, Package, Radar, Truck, Users, X } from 'lucide-vue-next'
+import { Activity, ArrowUpRight, Bell, Boxes, ClipboardList, CreditCard, FileText, Gauge, Home, LayoutDashboard, LogOut, Menu, Package, Radar, Truck, Users, X } from 'lucide-vue-next'
 const api = useApi(); const router = useRouter(); const open = ref(false)
 const nav = [
   { label: 'Overview', to: '/app', icon: LayoutDashboard },
@@ -10,7 +10,9 @@ const nav = [
   { label: 'Rentals', to: '/app/rentals', icon: Truck },
   { label: 'Home jobs', to: '/app/home', icon: Home },
   { label: 'Contractor', to: '/app/contractor', icon: Users },
+  { label: 'Partner catalog', to: '/app/partner', icon: Boxes },
   { label: 'Billing', to: '/app/billing', icon: CreditCard },
+  { label: 'Notifications', to: '/app/notifications', icon: Bell },
 ]
 onMounted(async () => {
   api.init()
