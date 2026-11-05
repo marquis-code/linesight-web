@@ -1,0 +1,10 @@
+<script setup lang="ts">
+import { ArrowUpRight, Database, FileCheck2, LockKeyhole, ServerCog } from 'lucide-vue-next'
+</script>
+<template>
+  <div>
+    <section class="section-y bg-ink text-bone"><div class="wrap"><p class="label-mono text-mint">Trust & security</p><h1 class="mt-4 max-w-[14ch] font-display text-[clamp(3rem,6vw,5.6rem)] leading-[.93] tracking-[-.05em]">Integrity data.<br><span class="text-mint">Treated like integrity data.</span></h1><p class="mt-5 max-w-xl text-[16px] leading-relaxed text-bone/55">LineSight is built for operators who cannot hand their asset data to a black box. Tenant isolation, auditable calculations and exportable evidence are core architecture.</p></div></section>
+    <section class="section-y"><div class="wrap grid gap-px overflow-hidden rounded-xl border border-ink/12 bg-ink/12 md:grid-cols-2"><div v-for="i in [{icon:LockKeyhole,t:'Tenant isolation',d:'Every asset, report, order and job is scoped to an organisation. Roles separate owner, engineer, contractor and homeowner access.'},{icon:FileCheck2,t:'Calculation audit',d:'B31G inputs, method and reviewer are stored with every report. Exports include the calculation trail.'},{icon:Database,t:'Data residency by contract',d:'Production deployments choose their region. Raw inspection files are encrypted at rest and access-logged.'},{icon:ServerCog,t:'Designed to integrate',d:'REST API, webhooks and a vendor-agnostic ingestion contract. SSO, SCIM and custom retention are enterprise options.'}]" :key="i.t" class="bg-bone p-7"><component :is="i.icon" :size="22" class="text-signal-deep" /><h2 class="mt-8 font-display text-[25px]">{{ i.t }}</h2><p class="mt-2 text-[13.5px] leading-relaxed text-ink/55">{{ i.d }}</p></div></div></section>
+    <section class="bg-bone py-14"><div class="wrap flex flex-col items-start justify-between gap-4 md:flex-row md:items-center"><div><p class="label-mono text-signal-deep">Security review</p><h2 class="mt-2 font-display text-[30px]">Need the full architecture pack?</h2></div><NuxtLink to="/contact" class="btn btn-dark">Request the pack <ArrowUpRight :size="14" /></NuxtLink></div></section>
+  </div>
+</template>
