@@ -12,7 +12,7 @@ withDefaults(defineProps<{ tone?: 'dark' | 'light'; compact?: boolean }>(), { to
     </span>
     <span v-if="!compact" class="leading-none">
       <span class="block font-display text-[18px] font-semibold tracking-[-0.04em]" :class="tone === 'dark' ? 'text-ink' : 'text-bone'">VOMTEK</span>
-      <span class="mt-1 block font-mono text-[8px] uppercase tracking-[0.22em]" :class="tone === 'dark' ? 'text-ink/45' : 'text-bone/45'">Pipeline intelligence</span>
+      <span class="mt-1 block font-mono text-[8px] uppercase tracking-[0.22em]" :class="tone === 'dark' ? 'text-ink/75' : 'text-bone/75'">Pipeline intelligence</span>
     </span>
   </NuxtLink>
 </template>

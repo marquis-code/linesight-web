@@ -3,10 +3,10 @@ import { ArrowUpRight, Menu, X } from 'lucide-vue-next'
 const open = ref(false)
 const route = useRoute()
 const links = [
-  { label: 'Intelligence', to: '/intelligence' },
-  { label: 'Homeowners', to: '/homeowners' },
-  { label: 'Marketplace', to: '/marketplace' },
-  { label: 'Rentals', to: '/rentals' },
+  { label: 'Pipeline help', to: '/intelligence' },
+  { label: 'Home checks', to: '/homeowners' },
+  { label: 'Parts & tools', to: '/marketplace' },
+  { label: 'Rent tools', to: '/rentals' },
   { label: 'Pricing', to: '/pricing' },
 ]
 watch(() => route.fullPath, () => { open.value = false })
@@ -16,7 +16,7 @@ watch(() => route.fullPath, () => { open.value = false })
     <div class="wrap flex h-[72px] items-center justify-between gap-5">
       <BrandMark />
       <nav class="hidden items-center gap-7 lg:flex">
-        <NuxtLink v-for="link in links" :key="link.to" :to="link.to" class="font-sans text-[14px] text-ink/65 transition-colors hover:text-ink">{{ link.label }}</NuxtLink>
+        <NuxtLink v-for="link in links" :key="link.to" :to="link.to" class="font-sans text-[14px] text-ink/75 transition-colors hover:text-ink">{{ link.label }}</NuxtLink>
       </nav>
       <div class="hidden items-center gap-2 lg:flex">
         <NuxtLink to="/login" class="btn btn-outline !min-h-10 !px-4">Sign in</NuxtLink>

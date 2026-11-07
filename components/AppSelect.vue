@@ -82,23 +82,23 @@ onUnmounted(unbindPosition)
 <template>
   <div class="relative">
     <button ref="trigger" type="button" class="select-trigger" :class="[compact ? 'select-trigger-compact' : '', open ? 'select-trigger-open' : '']" :disabled="disabled" :aria-expanded="open" aria-haspopup="listbox" :aria-label="ariaLabel || placeholder" @click="open ? close() : openMenu()" @keydown="onKey">
-      <span class="min-w-0 flex-1 truncate text-left" :class="selected ? '' : 'text-ink/40'">{{ selected?.label || placeholder }}</span>
-      <X v-if="open" :size="compact ? 11 : 14" class="shrink-0 text-ink/35" @click.stop="close" />
-      <ChevronDown v-else :size="compact ? 11 : 14" class="shrink-0 text-ink/40 transition-transform" :class="open ? 'rotate-180' : ''" />
+      <span class="min-w-0 flex-1 truncate text-left" :class="selected ? '' : 'text-ink/75'">{{ selected?.label || placeholder }}</span>
+      <X v-if="open" :size="compact ? 11 : 14" class="shrink-0 text-ink/75" @click.stop="close" />
+      <ChevronDown v-else :size="compact ? 11 : 14" class="shrink-0 text-ink/75 transition-transform" :class="open ? 'rotate-180' : ''" />
     </button>
   </div>
   <Teleport to="body">
     <Transition enter-active-class="transition duration-150 ease-out" enter-from-class="opacity-0 translate-y-1" leave-active-class="transition duration-100" leave-to-class="opacity-0 translate-y-1">
       <div v-if="open" ref="menu" class="fixed z-[120] overflow-hidden rounded-xl border border-ink/15 bg-white shadow-[0_24px_60px_-20px_rgba(7,16,14,.4)]" :style="{ top: `${position.top}px`, left: `${position.left}px`, width: `${position.width}px` }" role="listbox">
         <div v-if="searchable" class="border-b border-ink/10 p-2">
-          <label class="flex items-center gap-2 rounded-lg bg-paper px-2.5 py-2"><Search :size="13" class="shrink-0 text-ink/35" /><input ref="searchInput" v-model="query" class="w-full bg-transparent text-[12px] outline-none placeholder:text-ink/35" placeholder="Search…" @keydown="onKey"></label>
+          <label class="flex items-center gap-2 rounded-lg bg-paper px-2.5 py-2"><Search :size="13" class="shrink-0 text-ink/75" /><input ref="searchInput" v-model="query" class="w-full bg-transparent text-[12px] outline-none placeholder:text-ink/55" placeholder="Search…" @keydown="onKey"></label>
         </div>
         <div class="max-h-64 overflow-auto p-1.5 scrollbar-thin">
           <button v-for="(option, i) in filtered" :key="String(option.value)" type="button" class="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left transition-colors" :class="[i === active ? 'bg-paper' : 'hover:bg-paper/70', option.disabled ? 'cursor-not-allowed opacity-40' : '']" role="option" :aria-selected="String(option.value) === String(modelValue)" @mouseenter="active = i" @click="choose(option)">
-            <span class="min-w-0 flex-1"><span class="block truncate text-[12.5px] font-medium text-ink">{{ option.label }}</span><span v-if="option.hint" class="mt-0.5 block truncate font-mono text-[9px] uppercase tracking-[.04em] text-ink/35">{{ option.hint }}</span></span>
+            <span class="min-w-0 flex-1"><span class="block truncate text-[12.5px] font-medium text-ink">{{ option.label }}</span><span v-if="option.hint" class="mt-0.5 block truncate font-mono text-[9px] uppercase tracking-[.04em] text-ink/75">{{ option.hint }}</span></span>
             <Check v-if="String(option.value) === String(modelValue)" :size="13" class="shrink-0 text-vomtek" />
           </button>
-          <div v-if="!filtered.length" class="px-3 py-6 text-center text-[11px] text-ink/40">No matching options</div>
+          <div v-if="!filtered.length" class="px-3 py-6 text-center text-[11px] text-ink/75">No matching options</div>
         </div>
       </div>
     </Transition>

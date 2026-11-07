@@ -11,12 +11,12 @@ defineProps<{ product: any; compact?: boolean }>()
     <div class="p-4">
       <div class="flex items-start justify-between gap-3">
         <h3 class="font-display text-[18px] leading-tight tracking-[-.025em]">{{ product.name }}</h3>
-        <ArrowUpRight :size="15" class="mt-1 shrink-0 text-ink/30 transition-colors group-hover:text-signal" />
+        <ArrowUpRight :size="15" class="mt-1 shrink-0 text-ink/75 transition-colors group-hover:text-signal" />
       </div>
-      <p class="mt-2 line-clamp-2 text-[13px] leading-relaxed text-ink/55">{{ product.description }}</p>
+      <p class="mt-2 line-clamp-2 text-[13px] leading-relaxed text-ink/75">{{ product.description }}</p>
       <div class="mt-4 flex items-center justify-between border-t border-ink/10 pt-3">
-        <span class="font-mono text-[12px] font-medium">{{ money(product.priceUsd) }} <span class="text-[9px] font-normal text-ink/40">{{ product.unit }}</span></span>
-        <span class="font-mono text-[9px] uppercase tracking-[.08em] text-ink/40">{{ product.leadTime }}</span>
+        <span class="font-mono text-[12px] font-medium">{{ money(product.priceUsd) }} <span class="text-[9px] font-normal text-ink/75">{{ product.unit }}</span></span>
+        <span class="font-mono text-[9px] uppercase tracking-[.08em] text-ink/75">{{ product.leadTime }}</span>
       </div>
     </div>
   </NuxtLink>

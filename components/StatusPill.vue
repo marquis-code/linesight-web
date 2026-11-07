@@ -5,7 +5,7 @@ const tone = computed(() => {
   if (['active', 'complete', 'paid', 'fulfilled', 'released', 'acceptable', 'low', 'verified', 'awarded'].includes(s)) return 'bg-mint/20 text-mint-deep'
   if (['critical', 'high', 'failed', 'cancelled'].includes(s)) return 'bg-signal/15 text-signal-deep'
   if (['pending', 'processing', 'bidding', 'reserved', 'partially_released', 'review'].includes(s)) return 'bg-[#f6c453]/25 text-[#7a4d00]'
-  return 'bg-ink/10 text-ink/55'
+  return 'bg-ink/10 text-ink/75'
 })
 </script>
 <template>

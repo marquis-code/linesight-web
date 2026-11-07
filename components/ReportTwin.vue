@@ -109,8 +109,8 @@ onMounted(() => {
 onUnmounted(() => cleanup())
 </script>
 <template>
-  <div v-if="!fallback" ref="mount" class="relative w-full overflow-hidden rounded-xl" :style="{ height: `${height}px` }" aria-label="Interactive 3D pipeline anomaly twin">
-    <div class="pointer-events-none absolute left-3 top-3 z-10 rounded-full border border-bone/15 bg-ink/60 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[.1em] text-bone/55 backdrop-blur">Drag to orbit · live 3D twin</div>
+  <div v-if="!fallback" ref="mount" class="relative w-full overflow-hidden rounded-xl" :style="{ height: `${height}px` }" aria-label="Interactive 3D pipe view">
+    <div class="pointer-events-none absolute left-3 top-3 z-10 rounded-full border border-bone/15 bg-ink/60 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[.1em] text-bone/75 backdrop-blur">Drag to orbit · live 3D twin</div>
   </div>
   <div v-else class="overflow-hidden rounded-xl bg-ink"><AnomalyCanvas :anomalies="anomalies" :length-km="lengthKm" :height="height - 40" /></div>
 </template>

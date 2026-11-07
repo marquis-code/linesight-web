@@ -86,5 +86,5 @@ onUnmounted(() => ro?.disconnect())
 watch(() => [props.anomalies, props.lengthKm, props.tone], draw, { deep: true })
 </script>
 <template>
-  <canvas ref="el" class="block w-full" :style="{ height: `${height}px` }" aria-label="Pipeline anomaly depth profile" role="img" />
+  <canvas ref="el" class="block w-full" :style="{ height: `${height}px` }" aria-label="Pipe problem map" role="img" />
 </template>
