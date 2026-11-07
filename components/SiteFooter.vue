@@ -4,7 +4,7 @@ const year = new Date().getFullYear()
 const groups = [
   { title: 'Platform', links: [['Pipeline answers', '/intelligence'], ['Vomtek Home', '/homeowners'], ['Marketplace', '/marketplace'], ['Rentals', '/rentals'], ['Pricing', '/pricing']] },
   { title: 'Company', links: [['About', '/about'], ['Contact', '/contact'], ['Security', '/security'], ['Careers', '/careers']] },
-  { title: 'Resources', links: [['Helpful guides', '/insights'], ['Pipe safety guide', '/insights/b31g'], ['Find a contractor', '/contractors'], ['Service status', 'http://localhost:4110/api/health']] },
+  { title: 'Resources', links: [['Helpful guides', '/insights'], ['Pipe safety guide', '/insights/b31g'], ['Find a contractor', '/contractors'], ['System status', '/security']] },
 ]
 </script>
 <template>
