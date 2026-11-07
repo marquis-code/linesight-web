@@ -20,6 +20,8 @@
   --color-signal-deep: #c83b09;
   --color-mint: #5be3b3;
   --color-mint-deep: #0b6b4e;
+  --color-vomtek: #007d48;
+  --color-vomtek-deep: #004b2b;
   --color-steel: #78857c;
   --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Clash Display", "Satoshi", ui-sans-serif, sans-serif;
@@ -55,6 +57,8 @@
   .btn-primary:hover { background:var(--color-bone); color:var(--color-ink); }
   .btn-dark { background:var(--color-ink); color:var(--color-bone); }
   .btn-dark:hover { background:var(--color-signal); color:var(--color-ink); }
+  .btn-brand { background:var(--color-vomtek) !important; color:#ffffff !important; border:1px solid var(--color-vomtek) !important; }
+  .btn-brand:hover { background:var(--color-vomtek-deep) !important; color:#ffffff !important; border-color:var(--color-vomtek-deep) !important; }
   .btn-mint { background:var(--color-mint); color:var(--color-ink); }
   .btn-mint:hover { background:var(--color-bone); color:var(--color-ink); }
   .btn-outline { border:1px solid rgba(7,16,14,.24); color:var(--color-ink); }

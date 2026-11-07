@@ -12,7 +12,7 @@ const links = [
 watch(() => route.fullPath, () => { open.value = false })
 </script>
 <template>
-  <header class="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur-xl">
+  <header class="sticky top-0 z-50 border-b border-ink/10 bg-white/90 backdrop-blur-xl">
     <div class="wrap flex h-[72px] items-center justify-between gap-5">
       <BrandMark />
       <nav class="hidden items-center gap-7 lg:flex">
