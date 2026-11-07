@@ -8,14 +8,20 @@ const demos = [
   { label: 'Utility', email: 'utility@vomtek.com', note: 'Harris County Water · engineer' },
   { label: 'Homeowner', email: 'homeowner@vomtek.com', note: 'Cedar Ridge HOA' },
   { label: 'Contractor', email: 'contractor@vomtek.com', note: 'Precision Trenchless' },
+  { label: 'Manufacturer', email: 'supplier@vomtek.com', note: 'PolyForm Supply Co.' },
 ]
 function pick(email: string) { form.email = email; form.password = 'VomtekDemo!2026' }
 async function submit() {
   loading.value = true; error.value = ''
   try {
     const data = await api.login(form.email, form.password)
-    if (data.user?.role === 'admin' || data.user?.role === 'ops') window.location.href = config.public.adminUrl
-    else router.push(String(route.query.redirect || '/app'))
+    if (data.user?.role === 'admin' || data.user?.role === 'ops') {
+      const handoff = `${config.public.adminUrl}/login#token=${encodeURIComponent(data.token)}&user=${encodeURIComponent(JSON.stringify(data.user))}`
+      window.location.href = handoff
+      return
+    }
+    const fallback = data.user?.role === 'homeowner' ? '/app/home' : data.user?.role === 'contractor' ? '/app/contractor' : data.user?.role === 'manufacturer' ? '/app/partner' : '/app'
+    router.push(String(route.query.redirect || fallback))
   } catch (e: any) { error.value = e?.data?.message || 'Invalid email or password' }
   finally { loading.value = false }
 }
