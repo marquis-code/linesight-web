@@ -7,7 +7,7 @@ if (!report.value) throw createError({ statusCode: 404, statusMessage: 'Report n
 const asset = computed(() => report.value?.asset)
 const view = ref<'3d' | '2d'>('3d')
 const { data: comparison } = await useAsyncData(`comparison-${route.params.id}`, () => api.request<any>(`/portal/reports/${route.params.id}/comparison`).catch(() => null))
-async function print() { try { await api.download(`/portal/reports/${route.params.id}/pdf`, `linesight-${report.value.ref}.pdf`) } catch { window.print() } }
+async function print() { try { await api.download(`/portal/reports/${route.params.id}/pdf`, `vomtek-${report.value.ref}.pdf`) } catch { window.print() } }
 </script>
 <template>
   <div v-if="report">

@@ -2,7 +2,7 @@
 import { ArrowUpRight } from 'lucide-vue-next'
 const year = new Date().getFullYear()
 const groups = [
-  { title: 'Platform', links: [['Pipeline intelligence', '/intelligence'], ['LineSight Home', '/homeowners'], ['Marketplace', '/marketplace'], ['Rentals', '/rentals'], ['Pricing', '/pricing']] },
+  { title: 'Platform', links: [['Pipeline intelligence', '/intelligence'], ['Vomtek Home', '/homeowners'], ['Marketplace', '/marketplace'], ['Rentals', '/rentals'], ['Pricing', '/pricing']] },
   { title: 'Company', links: [['About', '/about'], ['Contact', '/contact'], ['Security', '/security'], ['Careers', '/careers']] },
   { title: 'Resources', links: [['Field notes', '/insights'], ['ASME B31G guide', '/insights/b31g'], ['Contractor network', '/contractors'], ['API status', 'http://localhost:4110/api/health']] },
 ]
@@ -32,7 +32,7 @@ const groups = [
     <div class="wrap flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between">
       <div class="flex items-center gap-4"><BrandMark tone="light" /><span class="hidden h-5 w-px bg-bone/15 sm:block" /><span class="font-mono text-[10px] uppercase tracking-[.1em] text-bone/35">Houston, TX · Built for the field</span></div>
       <div class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[10px] uppercase tracking-[.1em] text-bone/35">
-        <span>© {{ year }} LineSight Inc.</span><NuxtLink to="/privacy" class="hover:text-bone/70">Privacy</NuxtLink><NuxtLink to="/terms" class="hover:text-bone/70">Terms</NuxtLink><span>ISO 27001 roadmap</span>
+        <span>© {{ year }} Vomtek Inc.</span><NuxtLink to="/privacy" class="hover:text-bone/70">Privacy</NuxtLink><NuxtLink to="/terms" class="hover:text-bone/70">Terms</NuxtLink><span>ISO 27001 roadmap</span>
       </div>
     </div>
   </footer>

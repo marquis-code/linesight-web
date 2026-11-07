@@ -27,7 +27,7 @@ function logout() { api.clear(); router.push('/login') }
     <aside class="fixed inset-y-0 left-0 z-50 w-[250px] -translate-x-full border-r border-bone/10 bg-ink text-bone transition-transform lg:static lg:translate-x-0" :class="open ? 'translate-x-0' : ''">
       <div class="flex h-[72px] items-center justify-between border-b border-bone/10 px-5"><BrandMark tone="light" /><button class="lg:hidden" aria-label="Close menu" @click="open = false"><X :size="18" /></button></div>
       <div class="px-4 py-5">
-        <div class="rounded-lg border border-bone/10 bg-bone/5 p-3"><p class="font-mono text-[8px] uppercase tracking-[.1em] text-bone/35">Workspace</p><p class="mt-1 truncate text-[12.5px] font-medium">{{ api.user.value?.orgName || 'LineSight' }}</p><span class="mt-2 inline-flex items-center gap-1.5 font-mono text-[8px] uppercase tracking-[.08em] text-mint"><span class="status-dot" /> Live</span></div>
+        <div class="rounded-lg border border-bone/10 bg-bone/5 p-3"><p class="font-mono text-[8px] uppercase tracking-[.1em] text-bone/35">Workspace</p><p class="mt-1 truncate text-[12.5px] font-medium">{{ api.user.value?.orgName || 'Vomtek' }}</p><span class="mt-2 inline-flex items-center gap-1.5 font-mono text-[8px] uppercase tracking-[.08em] text-mint"><span class="status-dot" /> Live</span></div>
       </div>
       <nav class="space-y-0.5 px-3">
         <NuxtLink v-for="item in nav" :key="item.to" :to="item.to" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[12.5px] text-bone/55 transition-colors hover:bg-bone/5 hover:text-bone" active-class="!bg-bone/10 !text-bone">

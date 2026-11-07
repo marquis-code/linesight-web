@@ -10,7 +10,7 @@ const filtered = computed(() => (products.value || []).filter(p => (category.val
   <div>
     <section class="border-b border-ink/10 bg-ink py-14 text-bone md:py-20">
       <div class="wrap grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-        <div><p class="label-mono text-mint">LineSight Market</p><h1 class="mt-4 font-display text-[clamp(3rem,6vw,5.6rem)] leading-[.92] tracking-[-.05em]">The tool you need.<br><span class="text-mint">Sized for your line.</span></h1><p class="mt-5 max-w-xl text-[15px] leading-relaxed text-bone/55">Pigs, cups, transmitters and diagnostic kits from verified manufacturers. Configure by pipe schedule, buy online, or rent for a single run.</p></div>
+        <div><p class="label-mono text-mint">Vomtek Market</p><h1 class="mt-4 font-display text-[clamp(3rem,6vw,5.6rem)] leading-[.92] tracking-[-.05em]">The tool you need.<br><span class="text-mint">Sized for your line.</span></h1><p class="mt-5 max-w-xl text-[15px] leading-relaxed text-bone/55">Pigs, cups, transmitters and diagnostic kits from verified manufacturers. Configure by pipe schedule, buy online, or rent for a single run.</p></div>
         <NuxtLink to="/configurator" class="btn btn-mint">Configure a pig <ArrowUpRight :size="14" /></NuxtLink>
       </div>
     </section>

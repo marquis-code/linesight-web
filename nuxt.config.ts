@@ -9,17 +9,17 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:4110/api',
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://linesight.io',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://vomtek.com',
       adminUrl: process.env.NUXT_PUBLIC_ADMIN_URL || 'http://localhost:3210',
     },
   },
   app: {
     head: {
-      title: 'LineSight — pipeline integrity, without the black hole',
+      title: 'Vomtek — pipeline integrity, without the black hole',
       htmlAttrs: { lang: 'en' },
       meta: [
         { name: 'theme-color', content: '#07100e' },
-        { name: 'description', content: 'LineSight unifies pipeline inspection, pigging, utility diagnostics, marketplace procurement and contractor workflows in one platform.' },
+        { name: 'description', content: 'Vomtek unifies pipeline inspection, pigging, utility diagnostics, marketplace procurement and contractor workflows in one platform.' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
@@ -37,8 +37,8 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'LineSight — Pipeline Intelligence',
-      short_name: 'LineSight',
+      name: 'Vomtek — Pipeline Intelligence',
+      short_name: 'Vomtek',
       description: 'Pipeline diagnostics, integrity reports and utility workflows.',
       theme_color: '#07100e',
       background_color: '#f1ede2',
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
       start_url: '/',
       icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }],
     },
-    workbox: { navigateFallback: '/', globPatterns: ['**/*.{js,css,html,svg,png,woff2}'], runtimeCaching: [{ urlPattern: /\/images\/.*/, handler: 'CacheFirst', options: { cacheName: 'linesight-images', expiration: { maxEntries: 80, maxAgeSeconds: 2592000 } } }] },
+    workbox: { navigateFallback: '/', globPatterns: ['**/*.{js,css,html,svg,png,woff2}'], runtimeCaching: [{ urlPattern: /\/images\/.*/, handler: 'CacheFirst', options: { cacheName: 'vomtek-images', expiration: { maxEntries: 80, maxAgeSeconds: 2592000 } } }] },
     devOptions: { enabled: false },
   },
   nitro: { compressPublicAssets: true },

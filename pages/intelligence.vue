@@ -12,7 +12,7 @@ const features = [
     <section class="relative overflow-hidden bg-ink text-bone">
       <div class="absolute inset-0"><PhotoImage name="pipeline-welding" alt="Pipeline welding in the field" sizes="100vw" eager class="size-full object-cover opacity-30" /><div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" /></div>
       <div class="wrap relative py-20 md:py-28">
-        <p class="label-mono text-mint">LineSight Intelligence · B2B</p>
+        <p class="label-mono text-mint">Vomtek Intelligence · B2B</p>
         <h1 class="mt-5 max-w-[13ch] font-display text-[clamp(3.2rem,6.6vw,6.4rem)] leading-[.92] tracking-[-.055em]">Your integrity answer.<br><span class="text-mint">Before the meeting.</span></h1>
         <p class="mt-6 max-w-xl text-[17px] leading-relaxed text-bone/60">The unified workspace for pipeline and utility operators. Ingest a run, screen it against B31G, compare the last five years and leave with a signed work list — in hours.</p>
         <div class="mt-8 flex flex-wrap gap-2"><NuxtLink to="/login" class="btn btn-primary">Open the demo workspace <ArrowUpRight :size="14" /></NuxtLink><NuxtLink to="/contact" class="btn btn-outline-dark">Talk to an engineer</NuxtLink></div>
@@ -23,7 +23,7 @@ const features = [
     <section class="section-y">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5"><SectionLabel index="01">The work</SectionLabel><h2 class="mt-6 type-lg max-w-[12ch]">Stop paying analysts to reformat spreadsheets.</h2></div>
-        <div class="lg:col-span-7"><p class="text-[18px] leading-relaxed text-ink/60">Legacy inspection economics are built around backlog: a vendor runs the tool, ships a drive, and a proprietary team spends weeks turning it into a static PDF. By the time the report lands, the asset has changed.</p><p class="mt-4 text-[15px] leading-relaxed text-ink/55">LineSight separates the tool from the interpretation. Any run can be ingested, screened and compared. Your engineers stay in control of the decision — the platform does the arithmetic and keeps the audit trail.</p></div>
+        <div class="lg:col-span-7"><p class="text-[18px] leading-relaxed text-ink/60">Legacy inspection economics are built around backlog: a vendor runs the tool, ships a drive, and a proprietary team spends weeks turning it into a static PDF. By the time the report lands, the asset has changed.</p><p class="mt-4 text-[15px] leading-relaxed text-ink/55">Vomtek separates the tool from the interpretation. Any run can be ingested, screened and compared. Your engineers stay in control of the decision — the platform does the arithmetic and keeps the audit trail.</p></div>
       </div>
       <div class="wrap mt-12 grid gap-px overflow-hidden rounded-xl border border-ink/12 bg-ink/12 sm:grid-cols-2">
         <div v-for="f in features" :key="f.title" class="bg-bone p-7"><component :is="f.icon" :size="20" class="text-signal-deep" :stroke-width="1.6" /><h3 class="mt-7 font-display text-[24px] tracking-[-.03em]">{{ f.title }}</h3><p class="mt-2 max-w-md text-[13.5px] leading-relaxed text-ink/55">{{ f.text }}</p></div>

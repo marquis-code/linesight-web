@@ -8,14 +8,14 @@ const { data: stats } = await useAsyncData('home-stats', () => api.request<any>(
 
 const modules = [
   { icon: Radar, title: 'Pipeline Intelligence', text: 'Vendor-agnostic ILI ingestion, B31G screening, CGR and a 4D anomaly twin.', to: '/intelligence', tone: 'mint' },
-  { icon: Boxes, title: 'LineSight Market', text: 'Configure pigs, cups and transmitters by pipe schedule. Buy or request a quote.', to: '/marketplace', tone: 'signal' },
+  { icon: Boxes, title: 'Vomtek Market', text: 'Configure pigs, cups and transmitters by pipe schedule. Buy or request a quote.', to: '/marketplace', tone: 'signal' },
   { icon: Truck, title: 'Rentals & HaaS', text: 'Camera kits, acoustic survey gear and ILI tools with tracking and deposits.', to: '/rentals', tone: 'mint' },
-  { icon: Home, title: 'LineSight Home', text: 'Homeowner camera review, health certificate and a repair scope in 24 hours.', to: '/homeowners', tone: 'signal' },
+  { icon: Home, title: 'Vomtek Home', text: 'Homeowner camera review, health certificate and a repair scope in 24 hours.', to: '/homeowners', tone: 'signal' },
   { icon: Handshake, title: 'Contractor Network', text: 'Verified contractors bid on scoped work. Customers compare price and timeline.', to: '/contractors', tone: 'mint' },
-  { icon: ShieldCheck, title: 'LineAssure Escrow', text: 'Milestone-based payments released only when the work is verified.', to: '/security', tone: 'signal' },
+  { icon: ShieldCheck, title: 'Vomtek Assure Escrow', text: 'Milestone-based payments released only when the work is verified.', to: '/security', tone: 'signal' },
 ]
 const steps = [
-  { n: '01', title: 'Ingest the run', text: 'Drop an MFL, caliper, CCTV or acoustic file. LineSight normalises vendor formats on arrival.' },
+  { n: '01', title: 'Ingest the run', text: 'Drop an MFL, caliper, CCTV or acoustic file. Vomtek normalises vendor formats on arrival.' },
   { n: '02', title: 'Screen every anomaly', text: 'B31G, remaining life, corrosion growth and risk are calculated with an auditable trail.' },
   { n: '03', title: 'Decide with evidence', text: 'Your engineer sees a ranked work list, safe pressure, and a repair recommendation — not a 600-page PDF.' },
   { n: '04', title: 'Compare the next run', text: 'The 4D twin aligns multi-year, multi-vendor runs to show what is actually growing.' },
@@ -44,7 +44,7 @@ const ticker = ['Vendor-agnostic ingestion', 'ASME B31G', '4D anomaly twin', 'Li
             <h2 class="mt-7 type-lg max-w-[13ch]">The inspection industry is broken in both directions.</h2>
           </div>
           <div class="lg:col-span-7 lg:pl-10">
-            <p class="max-w-2xl text-[18px] leading-relaxed text-ink/60">Heavy operators wait months for static PDFs while residential owners blind-dig because industrial tools were never built for them. LineSight is the missing operating layer between the tool, the data and the decision.</p>
+            <p class="max-w-2xl text-[18px] leading-relaxed text-ink/60">Heavy operators wait months for static PDFs while residential owners blind-dig because industrial tools were never built for them. Vomtek is the missing operating layer between the tool, the data and the decision.</p>
             <div class="mt-5 flex gap-6"><div><p class="font-display text-[27px]">{{ (stats?.km || 0).toLocaleString() }} km</p><p class="label-mono mt-1 text-ink/40">modelled line</p></div><div><p class="font-display text-[27px]">{{ stats?.reports || 2 }}</p><p class="label-mono mt-1 text-ink/40">live reports</p></div><div><p class="font-display text-[27px]">{{ stats?.products || 8 }}</p><p class="label-mono mt-1 text-ink/40">catalog SKUs</p></div></div>
           </div>
         </div>
@@ -55,7 +55,7 @@ const ticker = ['Vendor-agnostic ingestion', 'ASME B31G', '4D anomaly twin', 'Li
             <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
             <div class="relative flex h-full flex-col justify-between p-6 md:p-8">
               <div class="flex items-center justify-between"><span class="rounded-full border border-bone/25 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[.12em]">B2B · Operators & utilities</span><span class="flex size-10 items-center justify-center rounded-full border border-bone/25 bg-bone/10 backdrop-blur"><ArrowUpRight :size="17" /></span></div>
-              <div><p class="label-mono text-mint">LineSight Intelligence</p><h3 class="mt-2 max-w-[13ch] font-display text-[32px] leading-[1.02] tracking-[-.04em] md:text-[40px]">The integrity answer, before the meeting.</h3><p class="mt-3 max-w-md text-[14px] leading-relaxed text-bone/65">Ingest multi-vendor ILI data, screen anomalies and compare every run in a live 4D twin. Built for teams managing thousands of miles.</p><span class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold text-mint">Explore intelligence <ArrowRight :size="13" /></span></div>
+              <div><p class="label-mono text-mint">Vomtek Intelligence</p><h3 class="mt-2 max-w-[13ch] font-display text-[32px] leading-[1.02] tracking-[-.04em] md:text-[40px]">The integrity answer, before the meeting.</h3><p class="mt-3 max-w-md text-[14px] leading-relaxed text-bone/65">Ingest multi-vendor ILI data, screen anomalies and compare every run in a live 4D twin. Built for teams managing thousands of miles.</p><span class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold text-mint">Explore intelligence <ArrowRight :size="13" /></span></div>
             </div>
           </NuxtLink>
           <NuxtLink to="/homeowners" class="group relative min-h-[430px] overflow-hidden rounded-2xl bg-bone-2">
@@ -63,7 +63,7 @@ const ticker = ['Vendor-agnostic ingestion', 'ASME B31G', '4D anomaly twin', 'Li
             <div class="absolute inset-0 bg-gradient-to-t from-bone via-bone/40 to-transparent" />
             <div class="relative flex h-full flex-col justify-between p-6 md:p-8">
               <div class="flex items-center justify-between"><span class="rounded-full border border-ink/20 bg-bone/70 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[.12em] backdrop-blur">B2C · Homeowners & property</span><span class="flex size-10 items-center justify-center rounded-full bg-ink text-bone"><ArrowUpRight :size="17" /></span></div>
-              <div><p class="label-mono text-signal-deep">LineSight Home</p><h3 class="mt-2 max-w-[13ch] font-display text-[32px] leading-[1.02] tracking-[-.04em] md:text-[40px]">Know your line. Before you dig.</h3><p class="mt-3 max-w-md text-[14px] leading-relaxed text-ink/65">Rent a camera, upload the footage, and get a plain-language health report with a contractor-ready scope and verified bids.</p><span class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold text-signal-deep">See LineSight Home <ArrowRight :size="13" /></span></div>
+              <div><p class="label-mono text-signal-deep">Vomtek Home</p><h3 class="mt-2 max-w-[13ch] font-display text-[32px] leading-[1.02] tracking-[-.04em] md:text-[40px]">Know your line. Before you dig.</h3><p class="mt-3 max-w-md text-[14px] leading-relaxed text-ink/65">Rent a camera, upload the footage, and get a plain-language health report with a contractor-ready scope and verified bids.</p><span class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold text-signal-deep">See Vomtek Home <ArrowRight :size="13" /></span></div>
             </div>
           </NuxtLink>
         </div>
@@ -92,7 +92,7 @@ const ticker = ['Vendor-agnostic ingestion', 'ASME B31G', '4D anomaly twin', 'Li
         <div class="lg:col-span-5">
           <SectionLabel index="03" tone="light">The black hole, closed</SectionLabel>
           <h2 class="mt-7 type-lg max-w-[12ch]">From raw sensor file to a decision your team can defend.</h2>
-          <p class="mt-5 max-w-md text-[15px] leading-relaxed text-bone/60">The legacy cycle is 4–12 weeks of analysts and PDFs. LineSight does the screening on ingestion, then gives your engineer the evidence to sign.</p>
+          <p class="mt-5 max-w-md text-[15px] leading-relaxed text-bone/60">The legacy cycle is 4–12 weeks of analysts and PDFs. Vomtek does the screening on ingestion, then gives your engineer the evidence to sign.</p>
           <NuxtLink to="/intelligence" class="btn btn-mint mt-7">See the workflow <ArrowUpRight :size="13" /></NuxtLink>
         </div>
         <div class="lg:col-span-7">
@@ -120,7 +120,7 @@ const ticker = ['Vendor-agnostic ingestion', 'ASME B31G', '4D anomaly twin', 'Li
         </div>
         <div class="lg:col-span-7">
           <div class="overflow-hidden rounded-2xl border border-ink/15 bg-ink text-bone shadow-[0_35px_80px_-55px_rgba(7,16,14,.8)]">
-            <div class="flex items-center justify-between border-b border-bone/10 px-4 py-3"><div class="flex items-center gap-2"><span class="size-2 rounded-full bg-signal" /><span class="font-mono text-[9px] uppercase tracking-[.1em] text-bone/55">Integrity report · LS-2026-1048</span></div><span class="rounded-full bg-mint/15 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[.08em] text-mint">High risk</span></div>
+            <div class="flex items-center justify-between border-b border-bone/10 px-4 py-3"><div class="flex items-center gap-2"><span class="size-2 rounded-full bg-signal" /><span class="font-mono text-[9px] uppercase tracking-[.1em] text-bone/55">Integrity report · VTK-2026-1048</span></div><span class="rounded-full bg-mint/15 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[.08em] text-mint">High risk</span></div>
             <div class="p-4">
               <AnomalyCanvas :anomalies="[{distanceM:4800,depthPct:18,severity:'low'},{distanceM:12800,depthPct:28,severity:'medium'},{distanceM:21400,depthPct:68,severity:'critical'},{distanceM:30200,depthPct:42,severity:'high'},{distanceM:39800,depthPct:16,severity:'low'}]" :length-km="48.2" :height="220" />
               <div class="mt-3 grid grid-cols-3 gap-2">

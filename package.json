@@ -1,5 +1,5 @@
 {
-  "name": "@linesight/web",
+  "name": "@vomtek/web",
   "private": true,
   "type": "module",
   "scripts": {

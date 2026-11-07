@@ -6,7 +6,7 @@ const result = ref<any>(null); const loading = ref(false); const requested = ref
 async function recommend() { loading.value = true; try { result.value = await api.request('/configurator', { method: 'POST', body: form }) } finally { loading.value = false } }
 async function requestQuote() {
   if (!result.value) return
-  await api.request('/leads', { method: 'POST', body: { name: 'Configurator request', email: 'demo@linesight.io', company: 'Website visitor', type: 'operator', message: `Configurator: ${result.value.family}, ${form.odMm}mm OD, ${form.wallMm}mm wall, ${form.distanceKm}km, ${form.product}`, source: 'configurator' } })
+  await api.request('/leads', { method: 'POST', body: { name: 'Configurator request', email: 'demo@vomtek.com', company: 'Website visitor', type: 'operator', message: `Configurator: ${result.value.family}, ${form.odMm}mm OD, ${form.wallMm}mm wall, ${form.distanceKm}km, ${form.product}`, source: 'configurator' } })
   requested.value = true
 }
 onMounted(recommend)
@@ -14,7 +14,7 @@ onMounted(recommend)
 <template>
   <div>
     <section class="bg-ink py-14 text-bone md:py-20">
-      <div class="wrap"><p class="label-mono text-mint">Sizing configurator</p><h1 class="mt-4 max-w-[16ch] font-display text-[clamp(3rem,6vw,5.5rem)] leading-[.93] tracking-[-.05em]">Specify the pig.<br><span class="text-mint">We price the run.</span></h1><p class="mt-5 max-w-xl text-[15px] leading-relaxed text-bone/55">Enter the pipe schedule and service. LineSight returns a tool family, cup count, bypass and a budgetary run cost — no sales call required.</p></div>
+      <div class="wrap"><p class="label-mono text-mint">Sizing configurator</p><h1 class="mt-4 max-w-[16ch] font-display text-[clamp(3rem,6vw,5.5rem)] leading-[.93] tracking-[-.05em]">Specify the pig.<br><span class="text-mint">We price the run.</span></h1><p class="mt-5 max-w-xl text-[15px] leading-relaxed text-bone/55">Enter the pipe schedule and service. Vomtek returns a tool family, cup count, bypass and a budgetary run cost — no sales call required.</p></div>
     </section>
     <section class="section-y">
       <div class="wrap grid gap-10 lg:grid-cols-12">
@@ -29,7 +29,7 @@ onMounted(recommend)
               <div class="sm:col-span-2"><label class="field-label">Service</label><select v-model="form.product" class="field"><option>Crude oil</option><option>Natural gas liquids</option><option>Natural gas</option><option>Reclaimed water</option><option>Process water</option><option>Slurry</option></select></div>
             </div>
             <button type="submit" class="btn btn-dark mt-7 w-full" :disabled="loading"><LoaderCircle v-if="loading" :size="15" class="animate-spin" /> {{ loading ? 'Calculating…' : 'Recommend a tool' }} <ArrowUpRight v-if="!loading" :size="14" /></button>
-            <p class="mt-4 text-[11.5px] leading-relaxed text-ink/40">Budgetary only. Final pricing depends on bend radius, elevation profile, product and mobilisation. A LineSight engineer reviews every configuration.</p>
+            <p class="mt-4 text-[11.5px] leading-relaxed text-ink/40">Budgetary only. Final pricing depends on bend radius, elevation profile, product and mobilisation. A Vomtek engineer reviews every configuration.</p>
           </form>
         </div>
         <div class="lg:col-span-6">

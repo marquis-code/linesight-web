@@ -1,6 +1,6 @@
-# LineSight Web
+# Vomtek Web
 
-Nuxt 3 public website and authenticated customer portal for LineSight.
+Nuxt 3 public website and authenticated customer portal for Vomtek.
 
 ## Run
 ```bash
@@ -10,15 +10,15 @@ pnpm dev
 Open http://localhost:3300. API default: http://localhost:4110/api.
 
 ## Demo accounts
-All customer accounts use `LineSightDemo!2026`:
-- `demo@linesight.io` — operator owner
-- `utility@linesight.io` — utility engineer
-- `homeowner@linesight.io` — homeowner
-- `contractor@linesight.io` — contractor
-- `supplier@linesight.io` — manufacturer
+All customer accounts use `VomtekDemo!2026`:
+- `demo@vomtek.com` — operator owner
+- `utility@vomtek.com` — utility engineer
+- `homeowner@vomtek.com` — homeowner
+- `contractor@vomtek.com` — contractor
+- `supplier@vomtek.com` — manufacturer
 
-Studio demo is separate at http://localhost:3210 (`ops@linesight.io` /
-`LineSightOps!2026`).
+Studio demo is separate at http://localhost:3210 (`ops@vomtek.com` /
+`VomtekOps!2026`).
 
 ## Routes
 Marketing: `/`, `/intelligence`, `/homeowners`, `/marketplace`,

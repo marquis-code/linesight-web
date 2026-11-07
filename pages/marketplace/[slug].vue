@@ -20,7 +20,7 @@ function add() { cart.add(product.value); added.value = true; setTimeout(() => a
         <p class="mt-4 text-[15px] leading-relaxed text-ink/60">{{ product.description }}</p>
         <div class="mt-7 flex items-end justify-between border-y border-ink/12 py-5"><div><p class="font-display text-[38px]">{{ money(product.priceUsd) }}</p><p class="font-mono text-[9px] uppercase tracking-[.08em] text-ink/40">{{ product.unit }} · {{ product.leadTime }}</p></div><span class="rounded-full bg-mint/25 px-3 py-1.5 font-mono text-[8.5px] uppercase tracking-[.08em] text-mint-deep">In stock · {{ product.stock }}</span></div>
         <div class="mt-5 flex flex-col gap-2"><button class="btn btn-dark w-full" @click="add">{{ added ? 'Added to cart' : 'Add to cart' }} <Check v-if="added" :size="14" /><ArrowUpRight v-else :size="14" /></button><NuxtLink to="/app/marketplace" class="btn btn-outline w-full">Buy in the portal</NuxtLink></div>
-        <div class="mt-6 space-y-3 border-t border-ink/12 pt-5 text-[12px] text-ink/55"><p class="flex items-center gap-2"><ShieldCheck :size="14" class="text-mint-deep" /> Vendor-verified listing · LineSight buyer protection</p><p class="flex items-center gap-2"><Truck :size="14" class="text-mint-deep" /> Ships from {{ product.vendor }} · {{ product.leadTime }}</p></div>
+        <div class="mt-6 space-y-3 border-t border-ink/12 pt-5 text-[12px] text-ink/55"><p class="flex items-center gap-2"><ShieldCheck :size="14" class="text-mint-deep" /> Vendor-verified listing · Vomtek buyer protection</p><p class="flex items-center gap-2"><Truck :size="14" class="text-mint-deep" /> Ships from {{ product.vendor }} · {{ product.leadTime }}</p></div>
       </div>
     </section>
   </div>
