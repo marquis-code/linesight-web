@@ -66,7 +66,7 @@ onUnmounted(stop)
         </div>
 
         <p class="mt-8 flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[.12em] text-vomtek"><span class="status-dot" /> {{ copy.kicker }}</p>
-        <h1 class="mt-4 font-display text-[clamp(3.3rem,6.2vw,6.1rem)] font-bold leading-[.9] tracking-[-.055em]">
+        <h1 class="type-hero mt-4">
           {{ copy.line1 }}<br><span class="text-vomtek">{{ copy.line2 }}</span>
         </h1>
         <p class="mt-6 max-w-[35rem] text-[17px] leading-relaxed text-ink/65 md:text-[18px]">{{ copy.body }}</p>

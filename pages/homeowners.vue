@@ -11,14 +11,14 @@ const steps = [
   <div>
     <section class="relative overflow-hidden bg-paper">
       <div class="wrap grid min-h-[620px] items-center gap-10 py-14 lg:grid-cols-12">
-        <div class="lg:col-span-6">
+        <div class="lg:col-span-7">
           <p class="label-mono text-signal-deep">Vomtek Home · B2C</p>
-          <h1 class="mt-4 font-display text-[clamp(3.2rem,6.5vw,6rem)] leading-[.92] tracking-[-.055em]">Know your line.<br><span class="text-mint-deep">Before you dig.</span></h1>
+          <h1 class="type-page-hero mt-4 font-display leading-[.92] tracking-[-.055em]">Know your line.<br><span class="text-mint-deep">Before you dig.</span></h1>
           <p class="mt-5 max-w-lg text-[17px] leading-relaxed text-ink/60">A backed-up sewer or mystery leak should not start with a $5,000 blind excavation. Upload a camera walkthrough and get a health report, a repair scope and real bids.</p>
           <div class="mt-7 flex flex-wrap gap-2"><NuxtLink to="/login" class="btn btn-dark">Upload my footage <ArrowUpRight :size="14" /></NuxtLink><NuxtLink to="/rentals" class="btn btn-outline">Rent a camera kit</NuxtLink></div>
           <div class="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-[11.5px] text-ink/55"><span class="flex items-center gap-2"><ShieldCheck :size="14" class="text-mint-deep" /> 24-hour report</span><span class="flex items-center gap-2"><FileCheck2 :size="14" class="text-mint-deep" /> Written certificate</span><span class="flex items-center gap-2"><HandCoins :size="14" class="text-mint-deep" /> Milestone escrow</span></div>
         </div>
-        <div class="lg:col-span-6">
+        <div class="lg:col-span-5">
           <div class="relative ml-auto max-w-[560px]">
             <div class="overflow-hidden rounded-2xl border border-ink/15"><PhotoImage name="water-utility" alt="Water utility pipeline infrastructure" sizes="(min-width:1024px) 45vw, 100vw" eager class="aspect-[4/5] w-full object-cover" /></div>
             <div class="absolute -bottom-5 -left-4 w-64 rounded-xl border border-ink/12 bg-bone p-4 shadow-2xl sm:left-6"><p class="flex items-center gap-2 font-mono text-[8.5px] uppercase tracking-[.1em] text-ink/45"><Camera :size="12" class="text-signal" /> Footage reviewed</p><div class="mt-3 flex items-end justify-between"><div><p class="font-display text-[32px] leading-none">78 ft</p><p class="mt-1 text-[10px] text-ink/40">3 findings · 1 high priority</p></div><span class="rounded-full bg-signal px-2 py-1 font-mono text-[8px] uppercase text-ink">Repair</span></div></div>

@@ -45,6 +45,9 @@
 @utility wrap { width:100%; max-width:1480px; margin-inline:auto; padding-inline:clamp(1.2rem,3.4vw,4rem); }
 @utility section-y { padding-block:clamp(4rem,7vw,7.5rem); }
 @utility label-mono { font-family:var(--font-mono); font-size:.72rem; line-height:1.4; letter-spacing:.13em; text-transform:uppercase; }
+@utility type-hero { font-family:var(--font-display); font-size:clamp(3.8rem,7vw,6.8rem); line-height:.88; letter-spacing:-.06em; font-weight:700; }
+@utility type-page-hero { font-family:var(--font-display); font-size:clamp(3.4rem,6.8vw,6.6rem); line-height:.9; letter-spacing:-.055em; font-weight:700; }
+@utility type-product-hero { font-family:var(--font-display); font-size:clamp(2.8rem,4.6vw,4rem); line-height:.96; letter-spacing:-.045em; font-weight:700; }
 @utility type-xl { font-family:var(--font-display); font-size:clamp(2.8rem,5vw,4.8rem); line-height:.96; letter-spacing:-.045em; font-weight:500; }
 @utility type-lg { font-family:var(--font-display); font-size:clamp(2rem,3.4vw,3.25rem); line-height:1.03; letter-spacing:-.035em; font-weight:500; }
 @utility type-md { font-family:var(--font-display); font-size:clamp(1.55rem,2.2vw,2.1rem); line-height:1.08; letter-spacing:-.03em; font-weight:500; }
@@ -65,12 +68,15 @@
   .btn-outline:hover { border-color:var(--color-ink); background:var(--color-ink); color:var(--color-bone); }
   .btn-outline-dark { border:1px solid rgba(248,245,236,.28); color:var(--color-bone); }
   .btn-outline-dark:hover { border-color:var(--color-bone); background:var(--color-bone); color:var(--color-ink); }
-  .field { width:100%; background:transparent; border:0; border-bottom:1px solid rgba(7,16,14,.28); border-radius:0; padding:.7rem 0; font-size:.98rem; color:var(--color-ink); outline:none; transition:border-color .2s; }
-  .field:focus { border-bottom-color:var(--color-signal); }
-  .field-dark { color:var(--color-bone); border-bottom-color:rgba(248,245,236,.28); }
+  .field { width:100%; min-height:3rem; background:#fff; border:1px solid rgba(7,16,14,.16); border-radius:.7rem; padding:.8rem .9rem; font-size:.93rem; line-height:1.4; color:var(--color-ink); outline:none; box-shadow:inset 0 1px 2px rgba(7,16,14,.03); transition:border-color .2s,box-shadow .2s,background-color .2s; }
+  .field::placeholder { color:rgba(7,16,14,.34); }
+  .field:hover { border-color:rgba(7,16,14,.28); }
+  .field:focus { border-color:var(--color-vomtek); box-shadow:0 0 0 3px rgba(0,125,72,.12); }
+  textarea.field { padding-top:.75rem; resize:vertical; }
+  .field-dark { background:rgba(255,255,255,.05); border-color:rgba(248,245,236,.22); color:var(--color-bone); box-shadow:none; }
   .field-dark::placeholder { color:rgba(248,245,236,.38); }
-  .field-dark:focus { border-bottom-color:var(--color-mint); }
-  .field-label { display:block; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(7,16,14,.58); margin-bottom:.45rem; }
+  .field-dark:focus { border-color:var(--color-mint); box-shadow:0 0 0 3px rgba(91,227,179,.12); }
+  .field-label { display:block; font-family:var(--font-mono); font-size:.64rem; font-weight:500; letter-spacing:.11em; text-transform:uppercase; color:rgba(7,16,14,.48); margin-bottom:.4rem; }
   .card { background:var(--color-bone); border:1px solid rgba(7,16,14,.14); border-radius:14px; }
   .grid-light { background-image:linear-gradient(to right,rgba(7,16,14,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(7,16,14,.07) 1px,transparent 1px); background-size:56px 56px; }
   .grid-dark { background-image:linear-gradient(to right,rgba(248,245,236,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(248,245,236,.07) 1px,transparent 1px); background-size:56px 56px; }

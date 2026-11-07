@@ -13,7 +13,7 @@ const features = [
       <div class="absolute inset-0"><PhotoImage name="pipeline-welding" alt="Pipeline welding in the field" sizes="100vw" eager class="size-full object-cover opacity-30" /><div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" /></div>
       <div class="wrap relative py-20 md:py-28">
         <p class="label-mono text-mint">Vomtek Intelligence · B2B</p>
-        <h1 class="mt-5 max-w-[13ch] font-display text-[clamp(3.2rem,6.6vw,6.4rem)] leading-[.92] tracking-[-.055em]">Your integrity answer.<br><span class="text-mint">Before the meeting.</span></h1>
+        <h1 class="type-page-hero mt-5 max-w-[13ch] font-display leading-[.92] tracking-[-.055em]">Your integrity answer.<br><span class="text-mint">Before the meeting.</span></h1>
         <p class="mt-6 max-w-xl text-[17px] leading-relaxed text-bone/60">The unified workspace for pipeline and utility operators. Ingest a run, screen it against B31G, compare the last five years and leave with a signed work list — in hours.</p>
         <div class="mt-8 flex flex-wrap gap-2"><NuxtLink to="/login" class="btn btn-primary">Open the demo workspace <ArrowUpRight :size="14" /></NuxtLink><NuxtLink to="/contact" class="btn btn-outline-dark">Talk to an engineer</NuxtLink></div>
         <div class="mt-14 grid max-w-3xl grid-cols-2 gap-6 border-t border-bone/15 pt-6 sm:grid-cols-4"><div v-for="s in [{n:'<5 min',l:'run to first screen'},{n:'99.1%',l:'anomaly coverage'},{n:'4D',l:'multi-run twin'},{n:'ASME',l:'B31G screening'}]" :key="s.l"><p class="font-display text-[26px]">{{ s.n }}</p><p class="label-mono mt-1 text-bone/35">{{ s.l }}</p></div></div>

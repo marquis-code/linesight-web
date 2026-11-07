@@ -14,7 +14,7 @@ onMounted(recommend)
 <template>
   <div>
     <section class="bg-ink py-14 text-bone md:py-20">
-      <div class="wrap"><p class="label-mono text-mint">Sizing configurator</p><h1 class="mt-4 max-w-[16ch] font-display text-[clamp(3rem,6vw,5.5rem)] leading-[.93] tracking-[-.05em]">Specify the pig.<br><span class="text-mint">We price the run.</span></h1><p class="mt-5 max-w-xl text-[15px] leading-relaxed text-bone/55">Enter the pipe schedule and service. Vomtek returns a tool family, cup count, bypass and a budgetary run cost — no sales call required.</p></div>
+      <div class="wrap"><p class="label-mono text-mint">Sizing configurator</p><h1 class="type-page-hero mt-4 max-w-[16ch] font-display leading-[.93] tracking-[-.05em]">Specify the pig.<br><span class="text-mint">We price the run.</span></h1><p class="mt-5 max-w-xl text-[15px] leading-relaxed text-bone/55">Enter the pipe schedule and service. Vomtek returns a tool family, cup count, bypass and a budgetary run cost — no sales call required.</p></div>
     </section>
     <section class="section-y">
       <div class="wrap grid gap-10 lg:grid-cols-12">
@@ -26,7 +26,7 @@ onMounted(recommend)
               <div><label class="field-label">Wall thickness (mm)</label><input v-model.number="form.wallMm" type="number" step="0.1" class="field" /></div>
               <div><label class="field-label">MAOP (kPa)</label><input v-model.number="form.maopKpa" type="number" class="field" /></div>
               <div><label class="field-label">Run length (km)</label><input v-model.number="form.distanceKm" type="number" class="field" /></div>
-              <div class="sm:col-span-2"><label class="field-label">Service</label><select v-model="form.product" class="field"><option>Crude oil</option><option>Natural gas liquids</option><option>Natural gas</option><option>Reclaimed water</option><option>Process water</option><option>Slurry</option></select></div>
+              <div class="sm:col-span-2"><label class="field-label">Service</label><AppSelect v-model="form.product" :options="['Crude oil','Natural gas liquids','Natural gas','Reclaimed water','Process water','Slurry']" placeholder="Select service" aria-label="Pipeline service" /></div>
             </div>
             <button type="submit" class="btn btn-dark mt-7 w-full" :disabled="loading"><LoaderCircle v-if="loading" :size="15" class="animate-spin" /> {{ loading ? 'Calculating…' : 'Recommend a tool' }} <ArrowUpRight v-if="!loading" :size="14" /></button>
             <p class="mt-4 text-[11.5px] leading-relaxed text-ink/40">Budgetary only. Final pricing depends on bend radius, elevation profile, product and mobilisation. A Vomtek engineer reviews every configuration.</p>
